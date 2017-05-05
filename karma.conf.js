@@ -26,6 +26,7 @@ module.exports = function (config) {
     },
     coverageIstanbulReporter: {
       reports: [ 'html', 'lcovonly' ],
+      // reports: [ 'lcovonly' ],
       fixWebpackSourcePaths: true
     },
     angularCli: {
@@ -38,7 +39,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    // browsers: ['Chrome'],
     singleRun: false
   });
 };

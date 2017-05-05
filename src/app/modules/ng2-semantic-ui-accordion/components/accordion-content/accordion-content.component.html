@@ -1,0 +1,7 @@
+<div class="title" [class.active]="isActive" (click)="onClickTitle()">
+  <i class="dropdown icon"></i> {{ title }}
+</div>
+
+<div class="content" [class.active]="isActive" [@contentState]="isActive ?  'active' : 'inactive'">
+  <ng-content></ng-content>
+</div>

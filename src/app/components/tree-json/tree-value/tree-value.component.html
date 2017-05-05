@@ -1,0 +1,20 @@
+<ng-template [ngIf]="util.isPrimitive(value)">
+  {{ value }}
+</ng-template>
+
+<ng-template [ngIf]="typeValue === 'object'">
+  <span>{{ '{' }}</span>
+  <app-tree-key-value
+    *ngFor="let item of value | toIterable; let last = last"
+    [key]="item.key"
+    [value]="item.value"
+    [isLast]="last">
+  </app-tree-key-value>
+  <span>{{ '}' }}</span>
+</ng-template>
+
+<ng-template [ngIf]="typeValue === 'array'">
+  <span>[</span>
+  <div>array</div>
+  <span>]</span>
+</ng-template>
