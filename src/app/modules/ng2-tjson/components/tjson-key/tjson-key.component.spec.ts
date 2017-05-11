@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TreeKeyComponent } from './tree-key.component';
+import { TJsonKeyComponent } from './tjson-key.component';
 
-describe('TreeKeyComponent', () => {
-  let component: TreeKeyComponent;
-  let fixture: ComponentFixture<TreeKeyComponent>;
+describe('TJsonKeyComponent', () => {
+  let component: TJsonKeyComponent;
+  let fixture: ComponentFixture<TJsonKeyComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TreeKeyComponent ]
+      declarations: [ TJsonKeyComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TreeKeyComponent);
+    fixture = TestBed.createComponent(TJsonKeyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

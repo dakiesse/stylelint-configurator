@@ -1,0 +1,34 @@
+:host /deep/ .tjson-brackets {
+  color: #fff
+}
+
+:host /deep/ tjson-key-value {
+  display: block;
+  margin-left: 12px;
+}
+
+:host /deep/ tjson-key {
+  color: #6d9cbe;
+}
+
+:host /deep/ tjson-value {
+  color: #6d9cbe;
+}
+
+:host /deep/ .tjson-value-typeof-boolean,
+:host /deep/ .tjson-value-typeof-null {
+  color: #fff;
+}
+
+:host /deep/ .tjson-value-typeof-string,
+:host /deep/ .tjson-value-typeof-number {
+  color: #a5c261;
+}
+
+:host /deep/ .tjson-value-typeof-array {
+
+}
+
+:host /deep/ .tjson-value-typeof-object {
+
+}

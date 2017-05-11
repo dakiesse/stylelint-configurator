@@ -1,11 +1,10 @@
 import { Component, HostListener, Input } from '@angular/core'
 
 @Component({
-  selector: 'app-tree-key',
-  templateUrl: './tree-key.component.html',
-  styleUrls: [ './tree-key.component.css' ],
+  selector: 'tjson-key',
+  template: `"{{ key }}"`,
 })
-export class TreeKeyComponent {
+export class TJsonKeyComponent {
   @Input() key: string
 
   @HostListener('click') clickHandler ($event): void {

@@ -4,7 +4,10 @@ import { FormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { StoreModule } from '@ngrx/store'
+import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { Ng2SemanticUiAccordionModule } from 'app/modules/ng2-semantic-ui-accordion/ng2-semantic-ui-accordion.module'
+import { Ng2TJsonModule } from 'app/modules/ng2-tjson/ng2-tjson.module'
+import { Ng2PipesModule } from 'app/modules/ng2-pipes/ng2-pipes.module'
 
 import { AppComponent } from './app.component'
 import { WorkspaceComponent } from './components/workspace/workspace.component'
@@ -16,15 +19,9 @@ import { ConfigurationSideComponent } from './components/configuration-side/conf
 import { rootReducer } from 'app/store/root-reducer'
 import { AccordionActions } from 'app/store/accordion/accordion.actions'
 import { ToolConfigurationActions } from 'app/store/tool-configuration/tool-configuration.actions'
-import { TreeJsonComponent } from './components/tree-json/tree-json.component'
-import { TreeKeyComponent } from './components/tree-json/tree-key/tree-key.component'
-import { TreeValueComponent } from './components/tree-json/tree-value/tree-value.component'
-import { TreeRootComponent } from './components/tree-json/tree-root/tree-root.component'
-import { ToIterablePipe } from './pipes/to-iterable.pipe'
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { JsonPrettyComponent } from './components/json-pretty/json-pretty.component';
-import { PopupDirective } from './directives/popup.directive';
-import { TreeKeyValueComponent } from './components/tree-json/tree-key-value/tree-key-value.component'
+
+import { PopupDirective } from './directives/popup.directive'
+import { ToolConfigurationService } from 'app/services/tool-configuration.service'
 
 @NgModule({
   declarations: [
@@ -34,29 +31,25 @@ import { TreeKeyValueComponent } from './components/tree-json/tree-key-value/tre
     SettingConfigurationComponent,
     AccordionSideComponent,
     ConfigurationSideComponent,
-    TreeJsonComponent,
-    TreeKeyComponent,
-    TreeValueComponent,
-    TreeRootComponent,
-    ToIterablePipe,
-    JsonPrettyComponent,
     PopupDirective,
-    TreeKeyValueComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
+    Ng2PipesModule,
     Ng2SemanticUiAccordionModule,
+    Ng2TJsonModule,
     StoreModule.provideStore(rootReducer),
     StoreDevtoolsModule.instrumentOnlyWithExtension({
-      maxAge: 5
-    })
+      maxAge: 5,
+    }),
   ],
   providers: [
     AccordionActions,
     ToolConfigurationActions,
+    ToolConfigurationService,
   ],
   bootstrap: [ AppComponent ],
 })

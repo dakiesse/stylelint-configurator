@@ -3,18 +3,18 @@
 </ng-template>
 
 <ng-template [ngIf]="typeValue === 'object'">
-  <span>{{ '{' }}</span>
-  <app-tree-key-value
+  <span class="tjson-brackets">{{ '{' }}</span>
+  <tjson-key-value
     *ngFor="let item of value | toIterable; let last = last"
     [key]="item.key"
     [value]="item.value"
     [isLast]="last">
-  </app-tree-key-value>
-  <span>{{ '}' }}</span>
+  </tjson-key-value>
+  <span class="tjson-brackets">{{ '}' }}</span>
 </ng-template>
 
 <ng-template [ngIf]="typeValue === 'array'">
-  <span>[</span>
+  <span class="tjson-brackets">[</span>
   <div>array</div>
-  <span>]</span>
+  <span class="tjson-brackets">]</span>
 </ng-template>

@@ -1,10 +1,10 @@
-<app-tree-root>
+<tjson-root>
   <!--<ng-template ngFor let-item [ngForOf]="structure | toIterable" let-last=last>-->
   <!--</ng-template>-->
-  <app-tree-key-value
+  <tjson-key-value
     *ngFor="let item of structure | toIterable; let last = last"
     [key]="item.key"
     [value]="item.value"
     [isLast]="last">
-  </app-tree-key-value>
-</app-tree-root>
+  </tjson-key-value>
+</tjson-root>
